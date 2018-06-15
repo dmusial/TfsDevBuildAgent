@@ -23,6 +23,8 @@ end
 Vagrant.configure("2") do |config|
   config.vm.box = "geerlingguy/ubuntu1604"
   config.vm.hostname = "tfsbuildagent"
+  config.vm.provision "shell", path: "git.sh", privileged: false
   config.vm.provision "shell", path: "docker.sh", privileged: false
+  config.vm.provision "shell", path: "clair/setup.sh", privileged: false
   config.vm.provision "shell", path: "tfsbuildagent.sh", :args => "#{username} #{password} #{agent_name}", privileged: false
 end

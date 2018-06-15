@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir tfsbuildagent && cd tfsbuildagent
-sudo chown -R vagrant:vagrant /home/vagrant/tfsbuildagent
+mkdir $HOME/tfsbuildagent && cd $HOME/tfsbuildagent
+sudo chown -R vagrant:vagrant $HOME/tfsbuildagent
 wget https://go.microsoft.com/fwlink/?linkid=842099 -O agent.tar.gz --progress=bar:force
 tar zxvf agent.tar.gz
 
@@ -9,6 +9,6 @@ wget https://raw.githubusercontent.com/Microsoft/vsts-agent/master/src/Misc/layo
 chmod +x installdependencies.sh
 sudo ./installdependencies.sh
 
-cd /home/vagrant/tfsbuildagent && ./config.sh --unattended --acceptteeeula --url http://tools-dev0:8080/tfs --auth Negotiate --username "$1" --password $2 --pool dev-agents-linux --agent $3
+cd $HOME/tfsbuildagent && ./config.sh --unattended --acceptteeeula --url http://tools-dev0:8080/tfs --auth Negotiate --username "$1" --password $2 --pool dev-agents-linux --agent $3
 sudo ./svc.sh install
 sudo ./svc.sh start
