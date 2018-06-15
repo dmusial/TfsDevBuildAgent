@@ -9,6 +9,6 @@ wget https://raw.githubusercontent.com/Microsoft/vsts-agent/master/src/Misc/layo
 chmod +x installdependencies.sh
 sudo ./installdependencies.sh
 
-cd $HOME/tfsbuildagent && ./config.sh --unattended --acceptteeeula --url http://tools-dev0:8080/tfs --auth Negotiate --username "$1" --password $2 --pool dev-agents-linux --agent $3
+cd $HOME/tfsbuildagent && ./config.sh --unattended --acceptteeeula --url $4 --auth Negotiate --username "$1" --password $2 --pool dev-agents-linux --agent $3
 sudo ./svc.sh install
 sudo ./svc.sh start

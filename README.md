@@ -1,2 +1,7 @@
-# Usage
-$ vagrant --username="TFS_USER" --password="TFS_PASS" --agent-name="AGENT_NAME" up
+# Usage example
+
+## Build agent
+$ vagrant --tfs-url="http://tools-dev0:8080/tfs" --username="dmusial" --password="xxxx" --agent-name="dmusial-dev-agent" up
+
+## Destroy agent
+$ vagrant --username="dmusial" --password="xxxx" destroy
