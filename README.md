@@ -1,2 +1,2 @@
-# TfsDevBuildAgent
-Vagrant-based TFS Linux build agent that you can quickly run locally and experiment with
+# Usage
+$ vagrant --username="TFS_USER" --password="TFS_PASS" --agent-name="AGENT_NAME"
